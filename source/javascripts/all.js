@@ -1,14 +1,20 @@
-function humanize(text) {
-  var cleanText =  text.toString()
-    .toLowerCase()
-    .replace(/[_-]/g, ' ');
-  var firstLetter = cleanText[0].toUpperCase();
-  return firstLetter + cleanText.slice(1);
-    //.replace(/(?:^|\s)\S/g, function(firstLetter) {
-    //  return firstLetter.toUpperCase();
-    // });
+function capitalize(word) {
+  return word[0].toUpperCase() + word.slice(1);
 }
 
+function removeChars(text) {
+  return text.toString()
+    .toLowerCase()
+    .replace(/[_-]/g, ' ');
+}
+
+function humanize(text) {
+  var cleanText = removeChars(text);
+  var capArray = cleanText.split(' ').map(function(word) {
+    return capitalize(word);
+  }) 
+  return capArray.join(' ');
+}
 function getSubDomain() {
   return window.location.host.split('.')[0];
 }

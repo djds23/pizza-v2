@@ -33,5 +33,5 @@ window.onload = function () {
   var subdomain = getSubDomain();
   var formattedText = humanize(subdomain);
   var p = document.querySelector('#userContent');
-  p.innerHTML = formattedText + ' enjoys Pizza!';
+  p.innerHTML = formattedText + ' enjoys pizza!';
 }
